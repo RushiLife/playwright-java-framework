@@ -3,8 +3,6 @@ package pages;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-import utils.webReausableMethods;
-
 public class ProductPage {
 
     private Page page;
