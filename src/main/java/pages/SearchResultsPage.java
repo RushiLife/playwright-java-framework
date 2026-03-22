@@ -3,6 +3,8 @@ package pages;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.LoadState;
 
+import utils.webReausableMethods;
+
 public class SearchResultsPage {
 
     private Page page;
@@ -35,5 +37,10 @@ public class SearchResultsPage {
         product.scrollIntoViewIfNeeded();
         page.click("text=" + productName);
 
+    }
+
+    public int getProductPrice() {
+    String priceText = page.locator("span.a-price-whole").first().innerText();
+    return webReausableMethods.extractPrice(priceText);
     }
 }
