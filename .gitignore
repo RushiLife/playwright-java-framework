@@ -6,3 +6,6 @@ target/
 
 # Mac
 .DS_Store
+
+# Environment configs (sensitive)
+config.properties

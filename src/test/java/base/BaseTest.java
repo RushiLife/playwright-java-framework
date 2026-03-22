@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 
 import com.microsoft.playwright.Page;
 
+import utils.ConfigReader;
+
 public class BaseTest {
 
     protected Page page;
@@ -18,8 +20,9 @@ public class BaseTest {
     @BeforeMethod
     public void setup() 
     {
-        page = DriverFactory.initBrowser("chromium");
-        page.navigate("https://www.amazon.in/");
+        prop = ConfigReader.initProp();
+        page = DriverFactory.initBrowser(prop.getProperty("browser"));
+        page.navigate(prop.getProperty("url"));
     }
 
     @Test
