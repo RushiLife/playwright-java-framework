@@ -27,9 +27,9 @@ public class DriverFactory {
     public static Page getPage() {
         return page.get();
     }
-
+ 
     public static void closeBrowser() {
         page.get().context().browser().close();
         playwright.get().close();
-    }
+    }    
 }

@@ -25,12 +25,6 @@ public class BaseTest {
         page.navigate(prop.getProperty("url"));
     }
 
-    @Test
-    public void loginTest()
-    {
-        System.out.println("Launch amozon");
-    }
-
     @AfterMethod
     public void tearDown() {
         DriverFactory.closeBrowser();
