@@ -14,10 +14,7 @@ public class HomePage {
     }
 
     public void searchProduct(String productName) {
-        String title = page.title();
-        System.out.println("Title: "+ title);
         page.fill(searchBox, productName);
         page.click(searchButton);
-
     }
 }
