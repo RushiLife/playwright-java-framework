@@ -2,6 +2,8 @@ package pages;
 
 import com.microsoft.playwright.*;
 
+import io.qameta.allure.Step;
+
 public class HomePage {
 
     private Page page;
