@@ -52,7 +52,6 @@ public class AmazonProductSearchTest extends BaseTest
         int subTotal = cart.getSubtotalPrice();
         System.out.println("Subtotal: " + subTotal);
 
-        Thread.sleep(2000);
         Assert.assertEquals(subTotal, perProductPrice * Integer.parseInt(quantity), "Subtotal mismatch!");
 
         product.goToCart();
@@ -62,8 +61,8 @@ public class AmazonProductSearchTest extends BaseTest
         Assert.assertTrue(cart.getProductName().contains(expectedProduct));
         System.out.println("Product Name: " + cart.getProductName());
 
-        Assert.assertEquals(cart.getQuantity(), "1");
-        System.out.println("Product Quantity: " + cart.getQuantity());
+        Assert.assertEquals(cart.getQuantity(), quantity);
+        System.out.println("Product Quantity: " + cart.getQuantity()); 
 
     }
         

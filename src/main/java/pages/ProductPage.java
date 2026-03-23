@@ -29,6 +29,7 @@ public class ProductPage {
     }
 
     public void selectQuantity(String qty) throws InterruptedException {
+        Thread.sleep(2000);
         Locator quantityLocator = page.locator(quantityDropdown);
         quantityLocator.scrollIntoViewIfNeeded();
         Thread.sleep(3000);

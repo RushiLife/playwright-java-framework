@@ -1,11 +1,7 @@
 package utils;
 
-import java.io.ByteArrayInputStream;
-
 import com.microsoft.playwright.Page;
-
 import base.DriverFactory;
-import io.qameta.allure.Allure;
 
 public class webReausableMethods {
 
@@ -16,8 +12,7 @@ public class webReausableMethods {
     public static void attachScreenshot(String name) {
         Page page = DriverFactory.getPage();
         if (page != null) {
-            Allure.addAttachment(name,
-                    new ByteArrayInputStream(page.screenshot()));
+            webReausableMethods.attachScreenshot(name);
         }
     }
     

@@ -1,10 +1,9 @@
 package listeners;
 
-import utils.webReausableMethods;
-
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import utils.webReausableMethods;
 
 public class TestListener implements ITestListener{
 

@@ -31,13 +31,7 @@ public class CartPage {
 
         return cartSection.first().isVisible();
     }
-/*
-    public String getSubtotalPrice() {
-        String subTotal = page.locator("span.a-price-whole").first().innerText();
-        String subTotalPrice = subTotal.replaceAll("[^0-9]", "");
-        return subTotalPrice;
-    }
-*/
+
     public int getSubtotalPrice() {
     String text = page.locator("span.a-price-whole").first().innerText();
     return Integer.parseInt(text.replaceAll("[^0-9]", ""));
@@ -52,5 +46,4 @@ public class CartPage {
         String number = text.replaceAll("[^0-9]", "");
         return number;
     }
-    //span.a-dropdown-prompt
 }

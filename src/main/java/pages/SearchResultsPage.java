@@ -1,7 +1,6 @@
 package pages;
 
 import com.microsoft.playwright.*;
-
 import utils.webReausableMethods;
 
 public class SearchResultsPage {
