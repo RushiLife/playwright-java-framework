@@ -8,6 +8,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import com.microsoft.playwright.Page;
 
@@ -19,11 +21,12 @@ public class BaseTest {
     protected Page page;
     protected Properties prop;
 
+    @Parameters("browser")
     @BeforeMethod
-    public void setup() 
+    public void setup(@Optional("chromium")String browser) 
     {
         prop = ConfigReader.initProp();
-        page = DriverFactory.initBrowser(prop.getProperty("browser"));
+        page = DriverFactory.initBrowser(browser);
         page.navigate(prop.getProperty("url"));
     }
 
