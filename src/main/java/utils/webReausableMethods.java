@@ -1,7 +1,7 @@
 package utils;
 
 import com.microsoft.playwright.Page;
-import base.DriverFactory;
+import com.microsoft.playwright.options.LoadState;
 
 public class webReausableMethods {
 
@@ -9,10 +9,17 @@ public class webReausableMethods {
     return Integer.parseInt(text.replaceAll("[^0-9]", ""));
     }
 
-    public static void attachScreenshot(String name) {
-        Page page = DriverFactory.getPage();
-        if (page != null) {
-            webReausableMethods.attachScreenshot(name);
+    public static byte[] capture(Page page) {
+        try {
+            page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+
+            return page.screenshot(new Page.ScreenshotOptions()
+                    .setTimeout(5000)
+                    .setFullPage(true));
+
+        } catch (Exception e) {
+            System.out.println("Screenshot failed: " + e.getMessage());
+            return new byte[0];
         }
     }
     

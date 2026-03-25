@@ -15,12 +15,11 @@ import com.microsoft.playwright.Page;
 
 import utils.ConfigReader;
 
-@Listeners(listeners.TestListener.class)
 public class BaseTest {
 
     protected Page page;
     protected Properties prop;
-
+    
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("chromium")String browser) 

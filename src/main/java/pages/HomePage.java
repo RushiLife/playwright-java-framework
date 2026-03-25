@@ -2,19 +2,21 @@ package pages;
 
 import com.microsoft.playwright.*;
 
+import locators.HomePageLocators;
+import utils.UIActions;
+
 public class HomePage {
 
-    private Page page;
-
-    private String searchBox = "#twotabsearchtextbox";
-    private String searchButton = "#nav-search-submit-button";
+    private UIActions ui;
 
     public HomePage(Page page) {
-        this.page = page;
+        this.ui = new UIActions(page);
     }
 
     public void searchProduct(String productName) {
-        page.fill(searchBox, productName);
-        page.click(searchButton);
+
+        ui.fill(HomePageLocators.SEARCH_INPUT, productName, "Enter Product Name " + productName);
+        ui.click(HomePageLocators.SEARCH_BUTTON, "Click On Search Button");
+        ui.isVisible(productName);
     }
 }

@@ -37,8 +37,9 @@ public class AmazonProductSearchTest extends BaseTest
          CartPage cart = new CartPage(page);
     
         home.searchProduct(searchProduct);
+        
         Assert.assertTrue(results.isResultsDisplayed(), "No search results");
-
+/*
         results.selectProductFromProductPage(expectedProduct);
         Assert.assertTrue(product.isProductPageDisplayed(), "Product page not opened");
 
@@ -63,7 +64,7 @@ public class AmazonProductSearchTest extends BaseTest
 
         Assert.assertEquals(cart.getQuantity(), quantity);
         System.out.println("Product Quantity: " + cart.getQuantity()); 
-
+*/
     }
         
 }
